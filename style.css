@@ -132,148 +132,83 @@ body{
    ENVELOPE
 ===================================== */
 
+/* ZARF YENİ */
+
 #envelope{
-
     position:relative;
-
     width:300px;
-
     height:190px;
-
-    cursor:pointer;
-
-    animation:
-
-    floatEnvelope
-    3s ease-in-out infinite;
-
 }
 
-@keyframes floatEnvelope{
-
-    0%{
-
-        transform:
-        translateY(0px);
-
-    }
-
-    50%{
-
-        transform:
-        translateY(-8px);
-
-    }
-
-    100%{
-
-        transform:
-        translateY(0px);
-
-    }
-
-} 
-/* =====================================
-   ENVELOPE BODY
-===================================== */
 
 #envelopeBack{
-
     position:absolute;
-
     inset:0;
-
-    background:#f8bfd7;
-
-    border-radius:10px;
-
-    box-shadow:
-        0 15px 35px rgba(0,0,0,.25);
-
+    background:#f7b6d2;
+    border-radius:12px;
+    z-index:1;
 }
 
-/* Ön üçgen */
+
+#letter{
+    position:absolute;
+    width:230px;
+    height:140px;
+    left:35px;
+    top:25px;
+
+    background:#fffaf2;
+    border-radius:8px;
+
+    padding:15px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    z-index:2;
+}
+
 
 #front{
-
     position:absolute;
-
     left:0;
     bottom:0;
 
-    width:0;
-    height:0;
+    width:300px;
+    height:100px;
 
-    border-left:150px solid transparent;
-    border-right:150px solid transparent;
-    border-bottom:95px solid #f4aacb;
+    background:#f2a8c8;
+
+    border-radius:
+    0 0 12px 12px;
 
     z-index:3;
-
 }
 
-/* Sol kat */
-
-#front::before{
-
-    content:"";
-
-    position:absolute;
-
-    left:-150px;
-    bottom:-95px;
-
-    width:0;
-    height:0;
-
-    border-top:95px solid transparent;
-    border-left:150px solid #ffd7e8;
-
-}
-
-/* Sağ kat */
-
-#front::after{
-
-    content:"";
-
-    position:absolute;
-
-    right:-150px;
-    bottom:-95px;
-
-    width:0;
-    height:0;
-
-    border-top:95px solid transparent;
-    border-right:150px solid #f8c3dd;
-
-}
-
-/* Kapak */
 
 #flap{
-
     position:absolute;
 
     top:0;
     left:0;
 
-    width:0;
-    height:0;
+    width:300px;
+    height:100px;
 
-    border-left:150px solid transparent;
-    border-right:150px solid transparent;
-    border-top:100px solid #ffd6e7;
+    background:#ffd1e3;
 
-    transform-origin:top;
+    clip-path:polygon(
+        0 0,
+        50% 70%,
+        100% 0
+    );
 
-    transition:1s ease;
-
-    z-index:6;
-
+    z-index:4;
 }
-
 /* Açılınca */
 
 #envelope.open #flap{
