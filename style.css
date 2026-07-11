@@ -1410,5 +1410,55 @@ body{
     transform:
     translateX(-50%)
     translateY(-120px);
+} 
+/* =========================
+   ENVELOPE FINAL FIX
+========================= */
+
+#envelope{
+    position:relative;
+    overflow:visible;
+}
+
+
+#letter{
+    position:absolute;
+    z-index:7;
+    top:20px;
+    left:50%;
+    transform:
+    translateX(-50%)
+    translateY(0);
+
+    transition:1s ease;
+}
+
+
+#front{
+    z-index:5;
+}
+
+
+#flap{
+    z-index:6;
+    transform-origin:top;
+    transition:1s ease;
+}
+
+
+#envelope.open #flap{
+
+    transform:
+    rotateX(180deg);
+
+}
+
+
+#envelope.open #letter{
+
+    transform:
+    translateX(-50%)
+    translateY(-170px);
+
 }
 
