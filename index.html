@@ -1,1 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Letter for Yu</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Background -->
+    <div id="background"></div>
+
+    <!-- Stars -->
+    <canvas id="stars"></canvas>
+
+    <!-- Sakura -->
+    <div id="petals"></div>
+
+    <!-- ========================= -->
+    <!-- START SCREEN -->
+    <!-- ========================= -->
+
+    <section id="startScreen" class="screen">
+
+        <h2 id="introText">
+            I'm sorry...
+        </h2>
+
+        <div id="envelope">
+
+            <div id="envelopeBack"></div>
+
+            <div id="letter">
+
+                <p>
+                    I'm sorry if I hurt you lately.
+                </p>
+
+                <span>
+                    (click)
+                </span>
+
+            </div>
+
+            <div id="flap"></div>
+
+            <div id="front"></div>
+
+        </div>
+
+    </section> 
+     <!-- ========================= -->
+    <!-- GIF SCREEN -->
+    <!-- ========================= -->
+
+    <section id="gifScreen" class="screen hidden">
+
+        <img id="gifImage" src="" alt="GIF">
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- I MISS YOU -->
+    <!-- ========================= -->
+
+    <section id="missScreen" class="screen hidden">
+
+        <h1 id="missText">
+
+            I miss you.
+
+        </h1>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- CAN WE BE OKAY AGAIN -->
+    <!-- ========================= -->
+
+    <section id="okayScreen" class="screen hidden">
+
+        <h1>
+
+            Can we be okay again?
+
+        </h1>
+
+        <div id="movingButtons">
+
+            <button class="movingBtn">
+
+                Yes ❤️
+
+            </button>
+
+            <button class="movingBtn">
+
+                Of course yes ❤️
+
+            </button>
+
+            <button class="movingBtn">
+
+                Definitely yes ❤️
+
+            </button>
+
+        </div>
+
+    </section> 
+      <!-- ========================= -->
+    <!-- CAN I BE YOUR CAT -->
+    <!-- ========================= -->
+
+    <section id="catScreen" class="screen hidden">
+
+        <h1 id="catTitle">
+            Can I be your cat?
+        </h1>
+
+        <div id="catButtons">
+
+            <button id="yesBtn">
+                ❤️ Yes
+            </button>
+
+            <button id="noBtn">
+                💔 No
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- FINAL SCREEN -->
+    <!-- ========================= -->
+
+    <section id="finalScreen" class="screen hidden">
+
+        <!-- Pati izleri -->
+        <div id="pawContainer"></div>
+
+        <!-- Uçan kalpler -->
+        <div id="heartContainer"></div>
+
+        <!-- Kayan yıldız -->
+        <div id="shootingStar"></div>
+
+        <!-- Kayan yıldızın kalp izi -->
+        <div id="starHeartTrail"></div>
+
+        <!-- Uyku -->
+        <div id="sleepBubble">
+            ZzZ...
+        </div>
+
+        <!-- Kedi -->
+        <div id="cat">
+
+            <div id="catEars">
+                <div class="ear left"></div>
+                <div class="ear right"></div>
+            </div>
+
+            <div id="catFace">
+
+                <div class="eye left"></div>
+                <div class="eye right"></div>
+
+                <div id="nose"></div>
+
+                <div id="mouth"></div>
+
+                <div class="whiskers left"></div>
+                <div class="whiskers right"></div>
+
+            </div>
+
+            <div id="catBody">
+
+                <div id="catChest">
+
+                    YU
+
+                </div>
+
+                <div id="tail"></div>
+
+            </div>
+
+        </div>
+
+    </section> 
+      <!-- ========================= -->
+    <!-- CONFETTI -->
+    <!-- ========================= -->
+
+    <canvas id="confettiCanvas"></canvas>
+
+    <!-- ========================= -->
+    <!-- OPTIONAL MUSIC
+         (Şimdilik boş bırakıyoruz)
+    ========================== -->
+
+    <!--
+    <audio id="bgMusic" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+    -->
+
+    <!-- ========================= -->
+    <!-- SCRIPT -->
+    <!-- ========================= -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+  
