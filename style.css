@@ -1,57 +1,114 @@
-/* =====================================
-   A LETTER FOR YU
-===================================== */
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
-html,
+
 body{
 
     width:100%;
-    height:100%;
+    height:100vh;
+
+    background:#111;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
     overflow:hidden;
 
-    font-family:
-    "Trebuchet MS",
-    Arial,
-    sans-serif;
-
-    background:#000;
+    font-family:Arial, sans-serif;
 
 }
 
-/* =====================================
-   BACKGROUND
-===================================== */
 
-#background{
+/* ANA EKRAN */
 
-    position:fixed;
+#startScreen{
 
-    inset:0;
+    width:100%;
+    height:100%;
 
-    background:url("IMG_5313.webp")
-    center center /
-    cover
-    no-repeat;
+    display:flex;
+    flex-direction:column;
 
-    z-index:-20;
+    justify-content:center;
+    align-items:center;
 
 }
 
-/* =====================================
-   SCREENS
-===================================== */
 
-.screen{
+#startScreen h1{
+
+    color:white;
+
+    margin-bottom:40px;
+
+    font-size:40px;
+
+}
+
+
+
+/* ZARF */
+
+#envelope{
+
+    position:relative;
+
+    width:300px;
+
+    height:190px;
+
+    cursor:pointer;
+
+}
+
+
+
+/* ZARFIN ARKASI */
+
+#envelopeBack{
 
     position:absolute;
 
-    inset:0;
+    width:100%;
+
+    height:100%;
+
+    background:#f7b6d2;
+
+    border-radius:10px;
+
+    z-index:1;
+
+}
+
+
+
+/* KAĞIT */
+
+#letter{
+
+    position:absolute;
+
+    left:50%;
+
+    top:20px;
+
+    transform:translateX(-50%);
+
+
+    width:240px;
+
+    height:140px;
+
+
+    background:#fffaf2;
+
+    border-radius:8px;
+
 
     display:flex;
 
@@ -61,1125 +118,98 @@ body{
 
     align-items:center;
 
-}
-
-.hidden{
-
-    display:none;
-
-}
-
-/* =====================================
-   STARS
-===================================== */
-
-#stars{
-
-    position:fixed;
-
-    inset:0;
-
-    width:100%;
-
-    height:100%;
-
-    pointer-events:none;
-
-    z-index:-15;
-
-}
-
-/* =====================================
-   PETALS
-===================================== */
-
-#petals{
-
-    position:fixed;
-
-    inset:0;
-
-    overflow:hidden;
-
-    pointer-events:none;
-
-    z-index:-14;
-
-}
-
-/* =====================================
-   INTRO
-===================================== */
-
-#introText{
-
-    color:white;
-
-    font-size:36px;
-
-    margin-bottom:35px;
-
-    text-shadow:
-
-    0 0 15px
-    rgba(255,255,255,.7);
-
-    user-select:none;
-
-}
-
-/* Mektup yukarı çıksın */
-
-#envelope.open # 
-/* =====================================
-   ENVELOPE DETAILS
-===================================== */
-
-#envelope::after{
-
-    content:"";
-
-    position:absolute;
-
-    left:25px;
-
-    bottom:-20px;
-
-    width:250px;
-
-    height:25px;
-
-    background:rgba(0,0,0,.25);
-
-    filter:blur(12px);
-
-    border-radius:50%;
-
-    z-index:-1;
-
-}
-
-
-/* Hafif parlama */
-
-#envelopeBack::after{
-
-    content:"";
-
-    position:absolute;
-
-    top:20px;
-
-    left:25px;
-
-    width:70px;
-
-    height:40px;
-
-    background:
-    rgba(255,255,255,.25);
-
-    border-radius:50%;
-
-    transform:rotate(-25deg);
-
-}
-
-
-/* =====================================
-   LETTER ANIMATION
-===================================== */
-
-@keyframes letterUp{
-
-    0%{
-
-        transform:
-        translateX(-50%)
-        translateY(120px);
-
-    }
-
-
-    70%{
-
-        transform:
-        translateX(-50%)
-        translateY(-60px);
-
-    }
-
-
-    100%{
-
-        transform:
-        translateX(-50%)
-        translateY(-45px);
-
-    }
-
-}
-
-
-#envelope.open #letter{
-
-    animation:
-
-    letterUp
-    1s
-    ease
-    forwards;
-
-}
-
-
-/* =====================================
-   GIF SCREEN
-===================================== */
-
-#gifScreen{
-
-    background:
-    rgba(0,0,0,.25);
-
-}
-
-
-#gifImage{
-
-    width:350px;
-
-    max-width:85vw;
-
-    border-radius:20px;
-
-    box-shadow:
-
-    0 15px 40px
-    rgba(0,0,0,.4);
-
-}
-
-
-/* =====================================
-   MISS YOU
-===================================== */
-
-#missText{
-
-    color:white;
-
-    font-size:55px;
 
     text-align:center;
 
-    text-shadow:
 
-    0 0 20px
-    rgba(255,255,255,.8);
+    z-index:2;
 
-    animation:
 
-    missShow
-    2s
-    ease;
+    transition:1s;
 
 }
 
 
-@keyframes missShow{
 
-    from{
+#letter p{
 
-        opacity:0;
-
-        transform:
-        scale(.7);
-
-    }
-
-
-    to{
-
-        opacity:1;
-
-        transform:
-        scale(1);
-
-    }
-
-} 
-/* =====================================
-   OKAY SCREEN
-===================================== */
-
-#okayScreen h1{
-
-    color:white;
-
-    font-size:45px;
-
-    text-align:center;
-
-    max-width:90%;
-
-    text-shadow:
-
-    0 0 18px
-    rgba(255,255,255,.8);
-
-}
-
-
-/* =====================================
-   MOVING BUTTONS
-===================================== */
-
-#movingButtons{
-
-    margin-top:50px;
-
-    display:flex;
-
-    gap:25px;
-
-    flex-wrap:wrap;
-
-    justify-content:center;
-
-}
-
-
-.movingBtn{
-
-    padding:15px 30px;
-
-    border:none;
-
-    border-radius:30px;
-
-    background:#ffb6d5;
-
-    color:white;
+    color:#555;
 
     font-size:18px;
 
-    cursor:pointer;
-
-    box-shadow:
-
-    0 8px 20px
-    rgba(0,0,0,.25);
-
-    transition:.3s ease;
-
 }
 
 
-.movingBtn:hover{
+#letter span{
 
-    transform:
+    margin-top:15px;
 
-    scale(1.1);
+    color:#999;
 
 }
 
 
 
-/* =====================================
-   CAT QUESTION
-===================================== */
+/* ÖN KAPAK */
 
-
-#catScreen h1{
-
-    color:white;
-
-    font-size:45px;
-
-    text-align:center;
-
-    text-shadow:
-
-    0 0 20px
-    rgba(255,255,255,.8);
-
-}
-
-
-#catButtons{
-
-    margin-top:40px;
-
-    display:flex;
-
-    gap:30px;
-
-}
-
-
-#catButtons button{
-
-    border:none;
-
-    padding:15px 35px;
-
-    border-radius:30px;
-
-    font-size:20px;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-}
-
-
-#yesBtn{
-
-    background:#ff8fc4;
-
-    color:white;
-
-}
-
-
-#noBtn{
-
-    background:#555;
-
-    color:white;
-
-}
-
-
-/* =====================================
-   CONFETTI LAYER
-===================================== */
-
-#confettiCanvas{
-
-    position:fixed;
-
-    inset:0;
-
-    pointer-events:none;
-
-    z-index:50;
-
-} 
-/* =====================================
-   CAT FINAL SCREEN
-===================================== */
-
-#finalScreen{
-
-    overflow:hidden;
-
-}
-
-
-/* KEDİ */
-
-#cat{
-
-    position:relative;
-
-    width:220px;
-
-    height:260px;
-
-    animation:
-
-    catFloat
-    3s
-    ease-in-out
-    infinite;
-
-}
-
-
-@keyframes catFloat{
-
-    0%{
-
-        transform:translateY(0);
-
-    }
-
-    50%{
-
-        transform:translateY(-12px);
-
-    }
-
-    100%{
-
-        transform:translateY(0);
-
-    }
-
-}
-
-
-/* Kulaklar */
-
-#catEars .ear{
-
-    position:absolute;
-
-    top:5px;
-
-    width:70px;
-
-    height:70px;
-
-    background:#f4c2a1;
-
-    clip-path:polygon(50% 0,100% 100%,0 100%);
-
-}
-
-
-.ear.left{
-
-    left:25px;
-
-    transform:rotate(-20deg);
-
-}
-
-
-.ear.right{
-
-    right:25px;
-
-    transform:rotate(20deg);
-
-}
-
-
-
-/* Kedi yüzü */
-
-#catFace{
-
-    position:absolute;
-
-    top:45px;
-
-    left:35px;
-
-    width:150px;
-
-    height:120px;
-
-    background:#f4c2a1;
-
-    border-radius:50%;
-
-}
-
-
-.eye{
-
-    position:absolute;
-
-    top:45px;
-
-    width:15px;
-
-    height:20px;
-
-    background:#222;
-
-    border-radius:50%;
-
-}
-
-
-.eye.left{
-
-    left:35px;
-
-}
-
-
-.eye.right{
-
-    right:35px;
-
-}
-
-
-#nose{
-
-    position:absolute;
-
-    left:68px;
-
-    top:75px;
-
-    width:14px;
-
-    height:10px;
-
-    background:#e88ca8;
-
-    border-radius:50%;
-
-}
-
-
-#mouth{
-
-    position:absolute;
-
-    left:65px;
-
-    top:90px;
-
-    width:20px;
-
-    height:10px;
-
-    border-bottom:2px solid #333;
-
-    border-radius:50%;
-
-}
-
-
-
-/* Gövde */
-
-#catBody{
+#front{
 
     position:absolute;
 
     bottom:0;
 
-    left:35px;
+    left:0;
 
-    width:150px;
 
-    height:130px;
-
-    background:#f4c2a1;
-
-    border-radius:70px 70px 40px 40px;
-
-}
-
-
-
-/* YU yazısı */
-
-#catChest{
-
-    position:absolute;
-
-    top:45px;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-    font-size:35px;
-
-    font-weight:bold;
-
-    color:#ff6fae;
-
-}
-
-
-
-/* Kuyruk */
-
-#tail{
-
-    position:absolute;
-
-    right:-50px;
-
-    bottom:25px;
-
-    width:70px;
-
-    height:70px;
-
-    border:15px solid #f4c2a1;
-
-    border-left:none;
-
-    border-radius:0 70px 70px 0;
-
-} 
-/* =====================================
-   PAW PRINTS
-===================================== */
-
-#pawContainer{
-
-    position:absolute;
-
-    inset:0;
-
-    pointer-events:none;
-
-}
-
-
-.paw{
-
-    position:absolute;
-
-    font-size:35px;
-
-    opacity:.8;
-
-    animation:
-
-    pawMove
-    4s
-    linear
-    infinite;
-
-}
-
-
-@keyframes pawMove{
-
-    from{
-
-        transform:
-        translateY(100px)
-        rotate(0deg);
-
-        opacity:0;
-
-    }
-
-    20%{
-
-        opacity:1;
-
-    }
-
-
-    to{
-
-        transform:
-        translateY(-500px)
-        rotate(30deg);
-
-        opacity:0;
-
-    }
-
-}
-
-
-/* =====================================
-   FLYING HEARTS
-===================================== */
-
-#heartContainer{
-
-    position:absolute;
-
-    inset:0;
-
-    pointer-events:none;
-
-}
-
-
-.heart{
-
-    position:absolute;
-
-    color:#ff8fc4;
-
-    font-size:25px;
-
-    animation:
-
-    heartFloat
-    5s
-    linear
-    infinite;
-
-}
-
-
-@keyframes heartFloat{
-
-    0%{
-
-        transform:
-
-        translateY(50px)
-        scale(.8);
-
-        opacity:0;
-
-    }
-
-
-    30%{
-
-        opacity:1;
-
-    }
-
-
-    100%{
-
-        transform:
-
-        translateY(-500px)
-        scale(1.5);
-
-        opacity:0;
-
-    }
-
-}
-
-
-/* =====================================
-   SLEEP BUBBLE
-===================================== */
-
-#sleepBubble{
-
-    position:absolute;
-
-    top:25%;
-
-    right:25%;
-
-    color:white;
-
-    font-size:35px;
-
-    font-weight:bold;
-
-    opacity:0;
-
-    text-shadow:
-
-    0 0 15px
-    white;
-
-}
-
-
-#finalScreen.sleeping #sleepBubble{
-
-    animation:
-
-    sleepShow
-    2s
-    forwards;
-
-}
-
-
-@keyframes sleepShow{
-
-    from{
-
-        opacity:0;
-
-        transform:
-
-        translateY(20px);
-
-    }
-
-
-    to{
-
-        opacity:1;
-
-        transform:
-
-        translateY(0);
-
-    }
-
-}
-
-
-/* =====================================
-   SHOOTING STAR
-===================================== */
-
-#shootingStar{
-
-    position:absolute;
-
-    top:-100px;
-
-    left:-100px;
-
-    width:8px;
-
-    height:8px;
-
-    background:white;
-
-    border-radius:50%;
-
-    opacity:0;
-
-}
-
-
-#finalScreen.starGo #shootingStar{
-
-    animation:
-
-    starMove
-    3s
-    linear;
-
-}
-
-
-@keyframes starMove{
-
-    0%{
-
-        opacity:0;
-
-        transform:
-        translate(0,0);
-
-    }
-
-
-    20%{
-
-        opacity:1;
-
-    }
-
-
-    100%{
-
-        opacity:0;
-
-        transform:
-        translate(900px,600px);
-
-    }
-
-} 
-/* =====================================
-   RESPONSIVE MOBILE
-===================================== */
-
-@media (max-width:600px){
-
-    #introText{
-
-        font-size:28px;
-
-    }
-
-
-    #envelope{
-
-        width:260px;
-
-        height:165px;
-
-    }
-
-
-    #front{
-
-        border-left-width:130px;
-
-        border-right-width:130px;
-
-    }
-
-
-    #flap{
-
-        border-left-width:130px;
-
-        border-right-width:130px;
-
-    }
-
-
-    #okayScreen h1,
-    #catScreen h1{
-
-        font-size:32px;
-
-        padding:20px;
-
-    }
-
-
-    #missText{
-
-        font-size:42px;
-
-    }
-
-
-    #cat{
-
-        transform:scale(.85);
-
-    }
-
-}
-
-
-/* =====================================
-   EXTRA GLOW EFFECTS
-===================================== */
-
-
-.glow{
-
-    filter:
-
-    drop-shadow(
-    0 0 15px
-    rgba(255,150,210,.8)
-    );
-
-}
-
-
-/* =====================================
-   SAKURA PETAL
-===================================== */
-
-
-.petal{
-
-    position:absolute;
-
-    width:18px;
-
-    height:18px;
-
-    background:#ffc5df;
-
-    border-radius:
-
-    70% 30% 70% 30%;
-
-    animation:
-
-    petalFall
-    linear
-    infinite;
-
-}
-
-
-@keyframes petalFall{
-
-    from{
-
-        transform:
-
-        translateY(-50px)
-        rotate(0deg);
-
-    }
-
-
-    to{
-
-        transform:
-
-        translateY(110vh)
-        rotate(360deg);
-
-    }
-
-}
-
-
-/* =====================================
-   FINAL SOFT LIGHT
-===================================== */
-
-
-#finalScreen::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-
-    radial-gradient(
-    circle,
-    rgba(255,200,230,.25),
-    transparent 60%
-    );
-
-    pointer-events:none;
-
-} 
-/* ZARF DÜZELTME */
-
-#envelope{
-    position:relative;
     width:300px;
-    height:190px;
-    perspective:800px;
+
+    height:100px;
+
+
+    background:#ef9fc4;
+
+
+    border-radius:0 0 10px 10px;
+
+
+    z-index:3;
+
 }
 
 
-#envelopeBack{
-    z-index:1;
-}
 
-
-#letter{
-    z-index:2;
-    top:20px;
-    transform:translateX(-50%);
-}
-
-
-#front{
-    z-index:5;
-}
-
+/* ÜST KAPAK */
 
 #flap{
-    z-index:6;
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+
+    width:300px;
+
+    height:100px;
+
+
+    background:#ffd0e3;
+
+
+    clip-path:polygon(
+        0 0,
+        50% 70%,
+        100% 0
+    );
+
+
     transform-origin:top;
+
+
+    transition:1s;
+
+
+    z-index:4;
+
 }
-
-
-#envelope.open #flap{
-    transform:rotateX(180deg);
-}
-
-
-#envelope.open #letter{
-    transform:
-    translateX(-50%)
-    translateY(-120px);
-} 
-
-   
