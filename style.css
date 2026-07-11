@@ -1,0 +1,645 @@
+/* =========================
+   TEMEL AYARLAR
+========================= */
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+
+body{
+
+    width:100vw;
+    height:100vh;
+
+    overflow:hidden;
+
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+
+    font-family:
+    "Noto Sans Thai",
+    sans-serif;
+
+
+    color:white;
+
+
+    background:#050812;
+
+}
+
+
+
+/* =========================
+   SAHNE ALANI
+========================= */
+
+#scene{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:0;
+
+
+    background:
+
+    radial-gradient(
+        circle at top,
+        #26345f,
+        #050812
+    );
+
+
+    transition:1s;
+
+}
+
+
+
+/* =========================
+   YILDIZLAR
+========================= */
+
+.stars{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:1;
+
+
+    background:
+
+    radial-gradient(
+        circle,
+        white 1px,
+        transparent 2px
+    );
+
+
+    background-size:
+
+    80px 80px;
+
+
+    opacity:.5;
+
+
+    animation:
+
+    starMove 20s linear infinite;
+
+}
+
+
+
+/* =========================
+   OYUN KUTUSU
+========================= */
+
+.game{
+
+    position:relative;
+
+    width:450px;
+
+    max-width:90vw;
+
+
+    z-index:2;
+
+}
+
+
+
+/* =========================
+   HİKAYE KARTI
+========================= */
+
+.story-card{
+
+
+    padding:35px;
+
+
+    border-radius:30px;
+
+
+    background:
+
+    rgba(255,255,255,.08);
+
+
+
+    backdrop-filter:
+
+    blur(20px);
+
+
+
+    border:
+
+    1px solid rgba(255,255,255,.18);
+
+
+
+    text-align:center;
+
+
+
+    box-shadow:
+
+    0 0 40px rgba(0,0,0,.5);
+
+
+
+    animation:
+
+    appear 1s ease;
+
+}
+
+
+
+h1{
+
+    font-size:34px;
+
+    margin-bottom:25px;
+
+}
+
+
+
+p{
+
+    font-size:20px;
+
+    line-height:1.8;
+
+} 
+/* =========================
+   BUTONLAR
+========================= */
+
+#choices{
+
+    margin-top:30px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+
+
+button{
+
+    padding:15px 25px;
+
+
+    border:none;
+
+
+    border-radius:50px;
+
+
+    background:
+
+    rgba(255,255,255,.95);
+
+
+
+    color:#111936;
+
+
+
+    font-size:18px;
+
+
+    font-family:
+
+    "Noto Sans Thai",
+    sans-serif;
+
+
+
+    cursor:pointer;
+
+
+
+    transition:.3s;
+
+}
+
+
+
+button:hover{
+
+    transform:scale(1.08);
+
+
+    box-shadow:
+
+    0 0 25px rgba(255,255,255,.5);
+
+}
+
+
+
+button:active{
+
+    transform:scale(.95);
+
+}
+
+
+
+/* =========================
+   HİKAYE GEÇİŞİ
+========================= */
+
+.story-card.change{
+
+    animation:
+
+    changeStory .6s ease;
+
+}
+
+
+
+@keyframes changeStory{
+
+
+    from{
+
+        opacity:0;
+
+        transform:
+
+        translateY(30px)
+        scale(.95);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:
+
+        translateY(0)
+        scale(1);
+
+    }
+
+}
+
+
+
+/* =========================
+   YILDIZ HAREKETİ
+========================= */
+
+@keyframes starMove{
+
+
+    from{
+
+        transform:
+
+        translateY(0);
+
+    }
+
+
+    to{
+
+        transform:
+
+        translateY(-80px);
+
+    }
+
+}
+
+
+
+/* =========================
+   AÇILIŞ ANİMASYONU
+========================= */
+
+@keyframes appear{
+
+
+    from{
+
+        opacity:0;
+
+        transform:
+
+        scale(.8);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:
+
+        scale(1);
+
+    }
+
+} 
+/* =========================
+   SAHNE TEMALARI
+========================= */
+
+
+/* Başlangıç */
+
+#scene{
+
+    background:
+
+    radial-gradient(
+        circle at top,
+        #26345f,
+        #050812
+    );
+
+}
+
+
+
+/* =========================
+   ORMAN
+========================= */
+
+#scene.forest{
+
+    background:
+
+    linear-gradient(
+        to bottom,
+        #102d28,
+        #020604
+    );
+
+}
+
+
+
+#scene.forest::after{
+
+    content:"";
+
+
+    position:absolute;
+
+
+    left:0;
+
+    bottom:0;
+
+
+    width:100%;
+
+    height:35%;
+
+
+    background:
+
+    linear-gradient(
+        transparent,
+        #010302
+    );
+
+}
+
+
+
+/* =========================
+   GİZEMLİ KAPI
+========================= */
+
+#scene.door{
+
+    background:
+
+    radial-gradient(
+        circle,
+        #34466d,
+        #050812
+    );
+
+}
+
+
+
+#scene.door::after{
+
+    content:"";
+
+
+    position:absolute;
+
+
+    width:180px;
+
+    height:260px;
+
+
+    left:50%;
+
+    top:50%;
+
+
+    transform:
+
+    translate(-50%,-50%);
+
+
+
+    border-radius:
+
+    20px 20px 0 0;
+
+
+
+    background:
+
+    linear-gradient(
+        90deg,
+        #151a2e,
+        #59698f,
+        #151a2e
+    );
+
+
+
+    box-shadow:
+
+    0 0 50px rgba(150,180,255,.6);
+
+}
+
+
+
+/* =========================
+   UZAY
+========================= */
+
+#scene.space{
+
+    background:
+
+    radial-gradient(
+        circle,
+        #263b85,
+        #02030a
+    );
+
+
+    animation:
+
+    spaceGlow 8s infinite alternate;
+
+}
+
+
+
+@keyframes spaceGlow{
+
+
+    from{
+
+        filter:brightness(.8);
+
+    }
+
+
+    to{
+
+        filter:brightness(1.2);
+
+    }
+
+}
+
+
+
+/* =========================
+   FİNAL
+========================= */
+
+#scene.final{
+
+    background:
+
+    radial-gradient(
+        circle,
+        #637bd0,
+        #080a18
+    );
+
+
+    box-shadow:
+
+    inset 0 0 100px rgba(150,180,255,.5);
+
+} 
+/* =========================
+   TELEFON UYUMLULUĞU
+========================= */
+
+@media(max-width:600px){
+
+
+    .story-card{
+
+        padding:25px;
+
+        border-radius:25px;
+
+    }
+
+
+
+    h1{
+
+        font-size:28px;
+
+    }
+
+
+
+    p{
+
+        font-size:18px;
+
+    }
+
+
+
+    button{
+
+        font-size:16px;
+
+        padding:
+
+        13px 20px;
+
+    }
+
+
+}
+
+
+
+/* =========================
+   DOKUNMATİK EFEKT
+========================= */
+
+button{
+
+    -webkit-tap-highlight-color:
+
+    transparent;
+
+}
+
+
+
+/* =========================
+   YUMUŞAK GEÇİŞ
+========================= */
+
+#scene,
+.story-card,
+button{
+
+    transition:
+
+    .5s ease;
+
+} 
